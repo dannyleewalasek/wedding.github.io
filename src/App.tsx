@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AlternateTimeline from "~/components/timetable";
 
 const faq = [
   { q: "What should I wear?", a: "For day guests, wedding attire is recommended. Evening guests, dress how you'd like. Remember sensible footwear and as the wedding is outside bring a warm coat for the evening. " },
@@ -14,7 +13,7 @@ const faq = [
   { q: "Can I Bring my USB?", a: "Yes, no psy-trance." }
 ];
 
-export default function Home() {
+function App() {
   const [openStates, setOpenStates] = useState<boolean[]>(Array(faq.length).fill(false));
 
   const toggleOpen = (idx: number) => {
@@ -59,55 +58,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Travel */}
-      <section
-        id="travel"
-        className="flex-1 min-h-[calc(100vh-4rem)] w-full bg-[#e5decc]  flex flex-col items-center justify-center px-6 sm:px-8 py-8"
-      >
-        <h2 className="text-5xl font-semibold mb-6 text-center">Travel</h2>
-        <div className="max-w-3xl w-full flex flex-col justify-center space-y-8 text-xl md:text-2xl text-center">
-             <p>
-              There is no public transport to the reception at the Farm. The distance between Hexham
-              and the farm is approximately 10 miles or 20 minutes drive. 
-            </p>
-          <div className="space-y-2">
-            <h3 className="text-3xl font-medium">Getting to the Ceremony (Full-day guests)</h3>
-            <p>
-              The wedding ceremony will take place at 
-              <a
-                href="https://goo.gl/maps/example-hexham"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              > Hexham Registry Office</a>. 
-              Guests can drive here, but note there is no onsite parking. There are several public car parks nearby.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-3xl font-medium">Ceremony to the Farm (Full-day guests)</h3>
-            <p>
-              After the ceremony, the celebration continues at the farm (NE47 0JD).  
-              Cars can be driven to the farm, and there are plenty of parking spaces.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-3xl font-medium">Heading to the Farm (Evening guests)</h3>
-            <p>
-              Guests joining only for the evening can head directly to the farm (NE47 0JD).  
-              There is plenty of parking available for cars.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-3xl font-medium">Train and Taxi Information</h3>
-            <p>
-              The nearest train station is <strong>Hexham Station</strong>.  
-              Getting taxis from the station can sometimes be tricky, and will need to be booked in advance.  
-              We recommend contacting local taxi services to arrange your ride to the farm, such as: <br></br> <strong>Ecocabs</strong> (01434 600600)
-              <br></br> <strong>Advance Taxis</strong> (01434 606565)
-            </p>
-          </div>
-        </div>
-      </section>
+{/* Travel */}
+<section
+  id="travel"
+  className="flex-1 min-h-[calc(100vh-4rem)] w-full bg-[#e5decc] flex flex-col items-center justify-center px-6 sm:px-8 py-8"
+>
+  <h2 className="text-5xl font-semibold mb-6 text-center">Travel</h2>
+
+  {/* Grid container for 2 columns */}
+  <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 text-xl md:text-2xl text-left">
+    {/* Column 1 */}
+    <div className="space-y-6">
+      <p>
+        There is no public transport to the reception at the Farm. The distance between Hexham
+        and the farm is approximately 10 miles or 20 minutes drive. 
+      </p>
+
+      <div className="space-y-2">
+        <h3 className="text-3xl font-medium">Getting to the Ceremony (Full-day guests)</h3>
+        <p>
+          The wedding ceremony will take place at 
+          <a
+            href="https://goo.gl/maps/example-hexham"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          > Hexham Registry Office</a>. 
+          Guests can drive here, but note there is no onsite parking. There are several public car parks nearby.
+        </p>
+      </div>
+
+      <div className="space-y-2">
+        <h3 className="text-3xl font-medium">Ceremony to the Farm (Full-day guests)</h3>
+        <p>
+          After the ceremony, the celebration continues at the farm (NE47 0JD).  
+          Cars can be driven to the farm, and there are plenty of parking spaces.
+        </p>
+      </div>
+    </div>
+
+    {/* Column 2 */}
+    <div className="space-y-6">
+      <div className="space-y-2">
+        <h3 className="text-3xl font-medium">Heading to the Farm (Evening guests)</h3>
+        <p>
+          Guests joining only for the evening can head directly to the farm (NE47 0JD).  
+          There is plenty of parking available for cars.
+        </p>
+      </div>
+
+      <div className="space-y-2">
+        <h3 className="text-3xl font-medium">Train and Taxi Information</h3>
+        <p>
+          The nearest train station is <strong>Hexham Station</strong>.  
+          Getting taxis from the station can sometimes be tricky, and will need to be booked in advance.  
+          We recommend contacting local taxi services to arrange your ride to the farm, such as: <br /> 
+          <strong>Ecocabs</strong> (01434 600600) <br /> 
+          <strong>Advance Taxis</strong> (01434 606565)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Accommodation */}
       <section
@@ -181,3 +194,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default App;
